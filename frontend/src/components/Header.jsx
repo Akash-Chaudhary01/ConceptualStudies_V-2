@@ -67,7 +67,7 @@ export default function Header() {
                     <a
                         href={`tel:${SITE.phone.replace(/\s/g, "")}`}
                         data-testid="header-call-link"
-                        className="hidden xl:flex items-center gap-2 text-sm text-[#0F2744] font-medium hover:text-[#1E4F8C]"
+                        className="hidden xl:flex items-center gap-2 text-sm text-[#0F2744] font-medium hover:text-[#1E4F8C] whitespace-nowrap"
                     >
                         <Phone className="w-4 h-4" /> {SITE.phone}
                     </a>
