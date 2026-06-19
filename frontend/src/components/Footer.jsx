@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Instagram } from "lucide-react";
-import { SITE } from "../lib/content";
+import { SITE, ASSETS } from "../lib/content";
 
 export default function Footer() {
     return (
         <footer data-testid="site-footer" className="bg-[#0F2744] text-white/80 mt-20">
             <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
                 <div>
-                    <div className="flex items-center gap-2 mb-4">
-                        <div className="w-10 h-10 rounded-sm bg-[#D4A93A] grid place-items-center text-[#0F2744] font-serif font-bold text-lg">
-                            CS
+                    <div className="flex items-center gap-3 mb-4">
+                        <div className="w-12 h-12 rounded-sm bg-white grid place-items-center p-1.5">
+                            <img src={ASSETS.logo} alt="Conceptual Studies" className="w-full h-full object-contain" />
                         </div>
-                        <div className="font-serif text-white text-xl">Conceptual Studies</div>
+                        <div className="font-serif text-white text-xl leading-tight">Conceptual<br />Studies</div>
                     </div>
                     <p className="text-sm text-white/70 leading-relaxed">
                         Premium online Commerce coaching across India by <span className="text-[#D4A93A]">Komal Sejwal</span> — concept-based learning that builds confidence and consistency.

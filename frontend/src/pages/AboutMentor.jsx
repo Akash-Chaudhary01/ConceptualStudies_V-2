@@ -1,6 +1,6 @@
 import SEO from "../components/SEO";
 import { PageHero, Breadcrumbs, CTABanner } from "./SubjectPage";
-import { SITE } from "../lib/content";
+import { SITE, ASSETS } from "../lib/content";
 import { CheckCircle2 } from "lucide-react";
 
 export default function AboutMentor() {
@@ -20,12 +20,12 @@ export default function AboutMentor() {
 
             <section className="max-w-6xl mx-auto px-5 md:px-8 lg:px-12 py-16 md:py-24 grid md:grid-cols-5 gap-10 lg:gap-16">
                 <div className="md:col-span-2">
-                    <div className="relative">
+                    <div className="relative max-w-sm mx-auto md:mx-0">
                         <div className="absolute -top-3 -left-3 w-full h-full border-2 border-[#D4A93A] rounded-sm" />
                         <img
-                            src="https://images.pexels.com/photos/37811218/pexels-photo-37811218.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900"
+                            src={ASSETS.mentor}
                             alt="Komal Sejwal"
-                            className="relative w-full h-auto object-cover rounded-sm shadow-[0_18px_50px_rgba(15,39,68,0.18)]"
+                            className="relative w-full aspect-[4/5] object-cover object-top rounded-sm shadow-[0_18px_50px_rgba(15,39,68,0.18)] bg-[#F4F6FB]"
                         />
                     </div>
 

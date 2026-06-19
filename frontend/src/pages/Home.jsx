@@ -3,7 +3,7 @@ import { ArrowRight, Phone, CheckCircle2, Star, ChevronRight } from "lucide-reac
 import SEO from "../components/SEO";
 import TrustBar from "../components/TrustBar";
 import DemoForm from "../components/DemoForm";
-import { SITE, SUBJECTS, WHY_US, JOURNEY, OUTCOMES, FAQS, CRASH_COURSES, CUET_FEATURES } from "../lib/content";
+import { SITE, SUBJECTS, WHY_US, JOURNEY, OUTCOMES, FAQS, CRASH_COURSES, CUET_FEATURES, ASSETS } from "../lib/content";
 import { useEffect, useState } from "react";
 import api from "../lib/api";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../components/ui/accordion";
@@ -134,12 +134,12 @@ export default function Home() {
                             Read more about Komal <ChevronRight className="w-4 h-4" />
                         </Link>
                     </div>
-                    <div className="relative">
+                    <div className="relative max-w-sm mx-auto md:mx-0 md:ml-auto w-full">
                         <div className="absolute -top-3 -left-3 w-full h-full border-2 border-[#D4A93A] rounded-sm" />
                         <img
-                            src="https://images.pexels.com/photos/37811218/pexels-photo-37811218.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900"
+                            src={ASSETS.mentor}
                             alt="Komal Sejwal — Commerce Mentor"
-                            className="relative w-full h-[480px] object-cover rounded-sm shadow-[0_20px_60px_rgba(15,39,68,0.18)]"
+                            className="relative w-full aspect-[4/5] object-cover object-top rounded-sm shadow-[0_20px_60px_rgba(15,39,68,0.18)] bg-[#F4F6FB]"
                         />
                     </div>
                 </div>

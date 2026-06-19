@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
-import { SITE } from "../lib/content";
+import { SITE, ASSETS } from "../lib/content";
 
 const NAV = [
     { to: "/", label: "Home" },
@@ -35,13 +35,15 @@ export default function Header() {
             }`}
         >
             <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 flex items-center justify-between h-16 md:h-20">
-                <Link to="/" data-testid="logo-link" className="flex items-center gap-2 group">
-                    <div className="w-10 h-10 rounded-sm bg-[#0F2744] grid place-items-center text-[#D4A93A] font-serif font-bold text-lg">
-                        CS
-                    </div>
-                    <div className="leading-tight">
-                        <div className="font-serif text-[#0F2744] text-lg md:text-xl font-semibold">Conceptual Studies</div>
-                        <div className="text-[10px] md:text-[11px] tracking-[0.18em] uppercase text-[#4A5568] font-medium">Commerce Mentorship</div>
+                <Link to="/" data-testid="logo-link" className="flex items-center gap-3 group">
+                    <img
+                        src={ASSETS.logo}
+                        alt="Conceptual Studies"
+                        className="h-11 md:h-12 w-auto object-contain"
+                    />
+                    <div className="leading-tight hidden sm:block">
+                        <div className="font-serif text-[#0F2744] text-base md:text-lg font-semibold">Conceptual Studies</div>
+                        <div className="text-[10px] tracking-[0.18em] uppercase text-[#4A5568] font-medium">Commerce Mentorship</div>
                     </div>
                 </Link>
 

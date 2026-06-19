@@ -1,3 +1,8 @@
+export const ASSETS = {
+    logo: "https://customer-assets.emergentagent.com/job_commerce-mastery-8/artifacts/1xt1oe4y_logo.png",
+    mentor: "https://customer-assets.emergentagent.com/job_commerce-mastery-8/artifacts/ktx68kya_mentor.jpg.jpeg",
+};
+
 export const SITE = {
     name: "Conceptual Studies",
     tagline: "Strong Concepts Today. Confident Results Tomorrow.",
