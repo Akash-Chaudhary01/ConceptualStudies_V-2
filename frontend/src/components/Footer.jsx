@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram } from "lucide-react";
 import { SITE } from "../lib/content";
 
 export default function Footer() {
@@ -54,6 +54,18 @@ export default function Footer() {
                         <li className="flex items-start gap-2">
                             <MapPin className="w-4 h-4 mt-0.5 text-[#D4A93A]" />
                             <span>Online Commerce Coaching Across India</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                            <Instagram className="w-4 h-4 mt-0.5 text-[#D4A93A]" />
+                            <a
+                                href={SITE.instagram}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                data-testid="footer-instagram"
+                                className="hover:text-[#D4A93A]"
+                            >
+                                @conceptual.studies
+                            </a>
                         </li>
                     </ul>
                 </div>

@@ -2,7 +2,7 @@ import SEO from "../components/SEO";
 import { PageHero, Breadcrumbs } from "./SubjectPage";
 import DemoForm from "../components/DemoForm";
 import { SITE } from "../lib/content";
-import { Phone, Mail, MessageCircle, MapPin } from "lucide-react";
+import { Phone, Mail, MessageCircle, MapPin, Instagram } from "lucide-react";
 
 export default function Contact() {
     return (
@@ -47,6 +47,19 @@ export default function Contact() {
                             <div>
                                 <div className="text-xs tracking-[0.18em] uppercase text-[#4A5568] font-semibold">Email</div>
                                 <div className="font-serif text-xl text-[#0F2744] group-hover:text-[#1E4F8C] break-all">{SITE.email}</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" data-testid="contact-instagram-btn" className="block bg-white border border-[#0F2744]/8 rounded-sm p-6 hover:shadow-[0_12px_36px_rgba(15,39,68,0.1)] transition group">
+                        <div className="flex items-start gap-4">
+                            <div className="w-12 h-12 bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#8134AF] grid place-items-center rounded-sm">
+                                <Instagram className="w-5 h-5 text-white" />
+                            </div>
+                            <div>
+                                <div className="text-xs tracking-[0.18em] uppercase text-[#4A5568] font-semibold">Instagram</div>
+                                <div className="font-serif text-xl text-[#0F2744] group-hover:text-[#1E4F8C]">@conceptual.studies</div>
+                                <div className="text-xs text-[#4A5568] mt-1">Follow for daily concept tips</div>
                             </div>
                         </div>
                     </a>

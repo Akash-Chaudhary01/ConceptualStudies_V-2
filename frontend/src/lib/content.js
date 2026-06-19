@@ -5,6 +5,7 @@ export const SITE = {
     phone: "+91 9910502275",
     phoneDigits: "919910502275",
     email: "info@conceptualstudies.in",
+    instagram: "https://www.instagram.com/conceptual.studies?utm_source=qr",
     whatsappMessage: "Hi, I'd like to book a free demo class at Conceptual Studies.",
     mentor: {
         name: "Komal Sejwal",
