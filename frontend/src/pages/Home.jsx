@@ -335,10 +335,10 @@ export default function Home() {
                 <Accordion type="single" collapsible className="space-y-3">
                     {FAQS.map((f, i) => (
                         <AccordionItem key={i} value={`f${i}`} data-testid={`faq-item-${i}`} className="bg-white border border-[#0F2744]/10 rounded-sm px-5">
-                            <AccordionTrigger className="text-left font-medium text-[#0F2744] hover:no-underline py-5">
+                            <AccordionTrigger className="text-left text-base md:text-lg font-semibold font-sans text-[#0F2744] hover:no-underline py-5">
                                 {f.q}
                             </AccordionTrigger>
-                            <AccordionContent className="text-[#4A5568] pb-5 leading-relaxed">
+                            <AccordionContent className="text-[#4A5568] pb-5 leading-relaxed text-base">
                                 {f.a}
                             </AccordionContent>
                         </AccordionItem>
