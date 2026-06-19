@@ -43,17 +43,17 @@ export default function Header() {
                     />
                 </Link>
 
-                <nav className="hidden lg:flex items-center gap-1">
+                <nav className="hidden lg:flex items-center gap-1.5">
                     {NAV.map((n) => (
                         <NavLink
                             key={n.to}
                             to={n.to}
                             data-testid={`nav-${n.label.toLowerCase().replace(/\s+/g, "-")}`}
                             className={({ isActive }) =>
-                                `px-3 py-2 text-sm font-medium transition-colors rounded-sm ${
+                                `px-3.5 py-2 text-[13px] font-medium transition-all rounded-sm whitespace-nowrap border ${
                                     isActive
-                                        ? "text-[#0F2744]"
-                                        : "text-[#4A5568] hover:text-[#0F2744]"
+                                        ? "bg-[#0F2744] text-white border-[#0F2744] shadow-sm"
+                                        : "bg-white text-[#0F2744] border-[#0F2744]/12 hover:border-[#D4A93A] hover:text-[#1E4F8C]"
                                 }`
                             }
                             end={n.to === "/"}
@@ -74,7 +74,7 @@ export default function Header() {
                     <Link
                         to="/contact"
                         data-testid="header-demo-btn"
-                        className="bg-[#0F2744] text-white hover:bg-[#1E4F8C] transition-colors rounded-sm px-5 py-2.5 text-sm font-medium"
+                        className="bg-[#0F2744] text-white hover:bg-[#1E4F8C] transition-colors rounded-sm px-5 py-2.5 text-sm font-medium whitespace-nowrap"
                     >
                         Book Free Demo
                     </Link>
