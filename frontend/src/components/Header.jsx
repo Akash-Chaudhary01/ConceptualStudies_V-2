@@ -35,16 +35,12 @@ export default function Header() {
             }`}
         >
             <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 flex items-center justify-between h-16 md:h-20">
-                <Link to="/" data-testid="logo-link" className="flex items-center gap-3 group">
+                <Link to="/" data-testid="logo-link" className="flex items-center group">
                     <img
                         src={ASSETS.logo}
                         alt="Conceptual Studies"
-                        className="h-11 md:h-12 w-auto object-contain"
+                        className="h-12 md:h-14 w-auto object-contain"
                     />
-                    <div className="leading-tight hidden sm:block">
-                        <div className="font-serif text-[#0F2744] text-base md:text-lg font-semibold">Conceptual Studies</div>
-                        <div className="text-[10px] tracking-[0.18em] uppercase text-[#4A5568] font-medium">Commerce Mentorship</div>
-                    </div>
                 </Link>
 
                 <nav className="hidden lg:flex items-center gap-1">
