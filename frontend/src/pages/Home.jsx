@@ -59,11 +59,11 @@ export default function Home() {
             <section data-testid="hero-section" className="relative overflow-hidden isolate">
                 <div className="absolute inset-0 -z-10">
                     <img
-                        src="https://images.pexels.com/photos/8197503/pexels-photo-8197503.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900"
+                        src="https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg?auto=compress&cs=tinysrgb&w=1800"
                         alt=""
                         className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#0F2744] via-[#0F2744]/95 to-[#0F2744]/70" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#0F2744] via-[#0F2744]/95 to-[#0F2744]/75" />
                 </div>
 
                 <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-20 md:py-28 lg:py-36 text-white relative">
@@ -110,6 +110,23 @@ export default function Home() {
             </section>
 
             <TrustBar />
+
+            {/* Stats Band — credibility */}
+            <section data-testid="stats-band" className="bg-white border-b border-[#0F2744]/10">
+                <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-12 md:py-14 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+                    {[
+                        { num: "10+", label: "Years of Mentorship" },
+                        { num: "97/100", label: "Highest Student Score" },
+                        { num: "500+", label: "Students Mentored" },
+                        { num: "100%", label: "Concept-First Teaching" },
+                    ].map((s, i) => (
+                        <div key={i} data-testid={`stat-${i}`} className={`flex flex-col items-start ${i > 0 ? "md:border-l md:border-[#0F2744]/10 md:pl-8" : ""}`}>
+                            <div className="font-serif text-4xl md:text-5xl text-[#0F2744] leading-none">{s.num}</div>
+                            <div className="mt-2 text-[11px] tracking-[0.18em] uppercase text-[#4A5568] font-semibold">{s.label}</div>
+                        </div>
+                    ))}
+                </div>
+            </section>
 
             {/* About Mentor Preview */}
             <section data-testid="about-mentor-preview" className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-20 md:py-28">
@@ -208,7 +225,7 @@ export default function Home() {
             {/* Crash Courses preview */}
             <section data-testid="crash-courses-preview" className="bg-[#0F2744] text-white py-20 md:py-28 relative overflow-hidden">
                 <div className="absolute right-0 top-0 w-1/2 h-full opacity-10">
-                    <img src="https://images.pexels.com/photos/5506217/pexels-photo-5506217.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900" alt="" className="w-full h-full object-cover" />
+                    <img src="https://images.pexels.com/photos/6238048/pexels-photo-6238048.jpeg?auto=compress&cs=tinysrgb&w=940" alt="" className="w-full h-full object-cover" />
                 </div>
                 <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 relative">
                     <div className="max-w-2xl mb-14">

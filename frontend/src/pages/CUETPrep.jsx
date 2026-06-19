@@ -15,7 +15,7 @@ export default function CUETPrep() {
                 kicker="CUET Preparation"
                 title="CUET Commerce — done with concept clarity"
                 subtitle="A focused program for CUET UG aspirants targeting the Commerce domain. Accountancy. Business Studies. Economics. Mock tests. Strategy. Mentorship."
-                image="https://images.pexels.com/photos/5506217/pexels-photo-5506217.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900"
+                image="https://images.pexels.com/photos/4144101/pexels-photo-4144101.jpeg?auto=compress&cs=tinysrgb&w=1400"
             />
             <Breadcrumbs items={[{ to: "/", label: "Home" }, { label: "CUET Preparation" }]} />
 

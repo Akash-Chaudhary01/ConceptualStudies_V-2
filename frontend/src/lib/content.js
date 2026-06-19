@@ -35,7 +35,7 @@ export const SUBJECTS = [
             "Company Accounts",
             "Cash Flow Statements",
         ],
-        image: "https://images.pexels.com/photos/5926390/pexels-photo-5926390.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        image: "https://images.pexels.com/photos/6238048/pexels-photo-6238048.jpeg?auto=compress&cs=tinysrgb&w=940",
     },
     {
         slug: "economics",
@@ -51,7 +51,7 @@ export const SUBJECTS = [
             "Money & Banking",
             "Indian Economic Development",
         ],
-        image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        image: "https://images.pexels.com/photos/5905709/pexels-photo-5905709.jpeg?auto=compress&cs=tinysrgb&w=940",
     },
     {
         slug: "business-studies",
@@ -67,7 +67,7 @@ export const SUBJECTS = [
             "Business Environment",
             "Financial Management",
         ],
-        image: "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        image: "https://images.pexels.com/photos/4144101/pexels-photo-4144101.jpeg?auto=compress&cs=tinysrgb&w=940",
     },
 ];
 
