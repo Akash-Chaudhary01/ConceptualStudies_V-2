@@ -13,7 +13,7 @@ export default function SampleQuestion({ q }) {
                 <div className="mt-8 bg-white/5 backdrop-blur border border-white/10 rounded-sm p-6 md:p-8">
                     <div className="flex items-start gap-3">
                         <Lightbulb className="w-5 h-5 text-[#D4A93A] mt-1 shrink-0" />
-                        <p className="font-serif text-xl md:text-2xl text-white leading-relaxed">{q.question}</p>
+                        <p className="font-serif text-lg sm:text-xl md:text-2xl text-white leading-relaxed">{q.question}</p>
                     </div>
 
                     <button

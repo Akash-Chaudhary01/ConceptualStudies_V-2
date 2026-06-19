@@ -60,7 +60,7 @@ export default function ExitIntentPopup() {
 
     return (
         <div data-testid="exit-popup" className="fixed inset-0 z-[60] grid place-items-center bg-[#0F2744]/60 backdrop-blur-sm px-4 animate-[fadeIn_0.2s_ease-out]" onClick={() => setOpen(false)}>
-            <div className="relative bg-white rounded-sm max-w-md w-full p-7 md:p-9 shadow-[0_30px_80px_rgba(0,0,0,0.4)]" onClick={(e) => e.stopPropagation()}>
+            <div className="relative bg-white rounded-sm max-w-md w-full p-6 md:p-9 shadow-[0_30px_80px_rgba(0,0,0,0.4)] max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
                 <button onClick={() => setOpen(false)} className="absolute top-3 right-3 text-[#4A5568] hover:text-[#0F2744] p-1.5" data-testid="exit-popup-close" aria-label="Close">
                     <X className="w-5 h-5" />
                 </button>

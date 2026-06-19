@@ -69,18 +69,18 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-r from-[#0F2744] via-[#0F2744]/95 to-[#0F2744]/75" />
                 </div>
 
-                <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-20 md:py-28 lg:py-36 text-white relative">
+                <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-16 md:py-28 lg:py-36 text-white relative">
                     <div className="max-w-3xl reveal">
                         <div className="flex items-center gap-2 mb-6">
                             <span className="text-[10px] tracking-[0.3em] uppercase text-[#D4A93A] font-semibold">Conceptual Studies</span>
                             <span className="text-[#D4A93A]">·</span>
                             <span className="text-[10px] tracking-[0.3em] uppercase text-white/70">Est. by Komal Sejwal</span>
                         </div>
-                        <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+                        <h1 className="font-serif text-[2.5rem] leading-[1.05] sm:text-5xl lg:text-6xl tracking-tight">
                             Strong Concepts Today.<br />
                             <span className="text-[#D4A93A]">Confident Results</span> Tomorrow.
                         </h1>
-                        <p className="mt-6 text-base md:text-lg text-white/85 max-w-2xl leading-relaxed font-light">
+                        <p className="mt-5 md:mt-6 text-sm sm:text-base md:text-lg text-white/85 max-w-2xl leading-relaxed font-light">
                             Master Accountancy, Economics and Business Studies through concept-based learning, personal attention and exam-focused preparation — designed for Class 11, Class 12 and CUET aspirants across India.
                         </p>
 
@@ -116,7 +116,7 @@ export default function Home() {
 
             {/* Stats Band — credibility */}
             <section data-testid="stats-band" className="bg-white border-b border-[#0F2744]/10">
-                <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-12 md:py-14 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+                <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-10 md:py-14 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
                     {[
                         { num: "10+", label: "Years of Mentorship" },
                         { num: "97/100", label: "Highest Student Score" },
@@ -124,8 +124,8 @@ export default function Home() {
                         { num: "100%", label: "Concept-First Teaching" },
                     ].map((s, i) => (
                         <div key={i} data-testid={`stat-${i}`} className={`flex flex-col items-start ${i > 0 ? "md:border-l md:border-[#0F2744]/10 md:pl-8" : ""}`}>
-                            <div className="font-serif text-4xl md:text-5xl text-[#0F2744] leading-none">{s.num}</div>
-                            <div className="mt-2 text-[11px] tracking-[0.18em] uppercase text-[#4A5568] font-semibold">{s.label}</div>
+                            <div className="font-serif text-3xl sm:text-4xl md:text-5xl text-[#0F2744] leading-none">{s.num}</div>
+                            <div className="mt-2 text-[10px] md:text-[11px] tracking-[0.18em] uppercase text-[#4A5568] font-semibold">{s.label}</div>
                         </div>
                     ))}
                 </div>

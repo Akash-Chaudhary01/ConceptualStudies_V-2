@@ -87,11 +87,11 @@ export default function ScorePredictor() {
                         </div>
                     </div>
 
-                    <div className="bg-gradient-to-br from-[#0F2744] to-[#1E4F8C] text-white rounded-sm p-7 md:p-10 relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-[#0F2744] to-[#1E4F8C] text-white rounded-sm p-6 md:p-10 relative overflow-hidden">
                         <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-[#D4A93A]/15 blur-2xl" />
                         <div className="relative">
                             <div className="text-xs tracking-[0.2em] uppercase text-[#D4A93A] font-semibold">{submitted ? "Your Projected Score" : "Sample Projection"}</div>
-                            <div className="mt-3 font-serif text-7xl md:text-8xl leading-none">{projected}<span className="text-2xl text-white/60">/100</span></div>
+                            <div className="mt-3 font-serif text-6xl sm:text-7xl md:text-8xl leading-none">{projected}<span className="text-2xl text-white/60">/100</span></div>
                             <div className="mt-2 text-sm text-white/70">Current weighted: {current}/100</div>
 
                             <div className="mt-8 border-t border-white/15 pt-5">
