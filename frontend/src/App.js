@@ -13,6 +13,8 @@ import Reviews from "@/pages/Reviews";
 import Contact from "@/pages/Contact";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
+import Results from "@/pages/Results";
+import CityPage from "@/pages/CityPage";
 import AdminLogin from "@/pages/AdminLogin";
 import AdminDashboard from "@/pages/AdminDashboard";
 import { SUBJECTS } from "@/lib/content";
@@ -35,6 +37,8 @@ function SiteRoutes() {
                 <Route path="/crash-courses" element={<CrashCourses />} />
                 <Route path="/cuet-preparation" element={<CUETPrep />} />
                 <Route path="/reviews" element={<Reviews />} />
+                <Route path="/results" element={<Results />} />
+                <Route path="/cities/:city" element={<CityPage />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/blog/:slug" element={<BlogPost />} />

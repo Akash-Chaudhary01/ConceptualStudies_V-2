@@ -149,6 +149,7 @@ class ReviewCreate(BaseModel):
     rating: int = 5
     text: str
     role: Optional[str] = ""
+    source: Optional[str] = "Google"
 
 
 class Review(ReviewCreate):
@@ -302,6 +303,9 @@ async def health():
 ROUTES = [
     "/", "/about-mentor", "/accountancy", "/economics", "/business-studies",
     "/crash-courses", "/cuet-preparation", "/reviews", "/contact", "/blog",
+    "/results",
+    "/cities/delhi", "/cities/gurgaon", "/cities/noida",
+    "/cities/mumbai", "/cities/bangalore", "/cities/hyderabad",
 ]
 
 

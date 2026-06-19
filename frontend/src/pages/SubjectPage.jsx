@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronRight } from "lucide-react";
 import SEO from "../components/SEO";
+import SampleQuestion from "../components/SampleQuestion";
+import { SAMPLE_QUESTIONS } from "../lib/content";
 
 export function PageHero({ kicker, title, subtitle, image }) {
     return (
@@ -115,6 +117,8 @@ export default function SubjectPage({ subject }) {
                     </aside>
                 </div>
             </section>
+
+            <SampleQuestion q={SAMPLE_QUESTIONS[subject.slug]} />
 
             <CTABanner text={`Strong ${subject.title} concepts. Confident exam performance.`} />
         </>

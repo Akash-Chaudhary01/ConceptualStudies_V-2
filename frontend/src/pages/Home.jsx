@@ -3,6 +3,9 @@ import { ArrowRight, Phone, CheckCircle2, Star, ChevronRight } from "lucide-reac
 import SEO from "../components/SEO";
 import TrustBar from "../components/TrustBar";
 import DemoForm from "../components/DemoForm";
+import ResultsStrip from "../components/ResultsStrip";
+import DemoFlow from "../components/DemoFlow";
+import ScorePredictor from "../components/ScorePredictor";
 import { SITE, SUBJECTS, WHY_US, JOURNEY, OUTCOMES, FAQS, CRASH_COURSES, CUET_FEATURES, ASSETS } from "../lib/content";
 import { useEffect, useState } from "react";
 import api from "../lib/api";
@@ -127,6 +130,8 @@ export default function Home() {
                     ))}
                 </div>
             </section>
+
+            <ResultsStrip />
 
             {/* About Mentor Preview */}
             <section data-testid="about-mentor-preview" className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-20 md:py-28">
@@ -318,6 +323,8 @@ export default function Home() {
             </section>
 
             {/* Reviews */}
+            <ScorePredictor />
+
             <section data-testid="reviews-section" className="bg-[#F4F6FB] py-20 md:py-28 border-y border-[#0F2744]/10">
                 <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12">
                     <div className="max-w-2xl mb-14">
@@ -326,7 +333,12 @@ export default function Home() {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {reviews.map((r, i) => (
-                            <div key={r.id || i} data-testid={`review-card-${i}`} className="bg-white border border-[#0F2744]/8 rounded-sm p-7 flex flex-col">
+                            <div key={r.id || i} data-testid={`review-card-${i}`} className="bg-white border border-[#0F2744]/8 rounded-sm p-7 flex flex-col relative">
+                                {r.source && (
+                                    <span className="absolute top-4 right-4 flex items-center gap-1 text-[10px] tracking-[0.18em] uppercase font-semibold text-[#1E4F8C]">
+                                        ★ {r.source}
+                                    </span>
+                                )}
                                 <div className="flex gap-0.5 mb-4">
                                     {Array.from({ length: r.rating || 5 }).map((_, j) => (
                                         <Star key={j} className="w-4 h-4 fill-[#D4A93A] text-[#D4A93A]" />
@@ -364,6 +376,8 @@ export default function Home() {
             </section>
 
             {/* Demo Form */}
+            <DemoFlow />
+
             <section id="demo" data-testid="home-demo-section" className="bg-white py-20 md:py-28 border-t border-[#0F2744]/10">
                 <div className="max-w-5xl mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-10 items-start">
                     <div>

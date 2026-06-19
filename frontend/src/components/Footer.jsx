@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Instagram } from "lucide-react";
-import { SITE, ASSETS } from "../lib/content";
+import { SITE, ASSETS, CITIES } from "../lib/content";
 
 export default function Footer() {
     return (
@@ -34,6 +34,7 @@ export default function Footer() {
                     <ul className="space-y-2 text-sm">
                         <li><Link to="/" className="hover:text-[#D4A93A]">Home</Link></li>
                         <li><Link to="/about-mentor" className="hover:text-[#D4A93A]">About Mentor</Link></li>
+                        <li><Link to="/results" className="hover:text-[#D4A93A]">Student Results</Link></li>
                         <li><Link to="/reviews" className="hover:text-[#D4A93A]">Reviews</Link></li>
                         <li><Link to="/blog" className="hover:text-[#D4A93A]">Blog</Link></li>
                         <li><Link to="/contact" className="hover:text-[#D4A93A]">Contact</Link></li>
@@ -68,6 +69,19 @@ export default function Footer() {
                             </a>
                         </li>
                     </ul>
+                </div>
+            </div>
+
+            <div className="border-t border-white/10">
+                <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-8">
+                    <div className="text-[10px] tracking-[0.2em] uppercase text-white/50 font-semibold mb-3">Coaching across India</div>
+                    <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-white/70">
+                        {CITIES.map((c) => (
+                            <Link key={c.slug} to={`/cities/${c.slug}`} className="hover:text-[#D4A93A]" data-testid={`footer-city-${c.slug}`}>
+                                Commerce Coaching in {c.name}
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </div>
 
