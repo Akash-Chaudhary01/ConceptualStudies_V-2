@@ -1,0 +1,101 @@
+{
+  "theme": "light",
+  "archetype": "5 (Luxury / Premium Educational)",
+  "colors": {
+    "primary": "#0F2744",
+    "secondary": "#1E4F8C",
+    "accent": "#D4A93A",
+    "background": "#FAFAFC",
+    "surface": "#FFFFFF",
+    "text_main": "#07111C",
+    "text_muted": "#4A5568",
+    "border": "#E2E8F0"
+  },
+  "typography": {
+    "headings_font": "Cormorant Garamond",
+    "body_font": "Poppins",
+    "hierarchy": {
+      "h1": "text-5xl sm:text-6xl tracking-tight leading-none font-serif",
+      "h2": "text-3xl sm:text-4xl tracking-tight leading-snug font-serif",
+      "h3": "text-xl sm:text-2xl font-serif font-medium",
+      "body": "text-base leading-relaxed font-sans",
+      "labels": "text-xs tracking-[0.2em] uppercase font-bold font-sans"
+    }
+  },
+  "spacing_and_layout": {
+    "container_padding": "px-6 md:px-12 lg:px-24",
+    "section_spacing": "py-20 md:py-32",
+    "grid_strategy": {
+      "why_choose_us": "Bento 'Tetris' Grid (Mode A) with varied col-spans (e.g., 2x2, 1x2, 2x1) to break generic symmetric grids.",
+      "subjects": "Control Room Grid (Mode B) using 3-col structure with dense, functional spacing."
+    }
+  },
+  "surfaces": {
+    "header": "Crystal Glassmorphism: bg-white/80 backdrop-blur-xl border-b border-[#0F2744]/10 shadow-sm",
+    "cards": "Neumorphic tactile variant: bg-white shadow-[0_4px_24px_rgba(15,39,68,0.06)] border border-[#0F2744]/5 rounded-xl",
+    "footer": "Deep Navy background (#0F2744) with Gold (#D4A93A) accents and white/70 text."
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#0F2744] text-white hover:bg-[#1E4F8C] transition-colors rounded-sm px-8 py-4 flex items-center justify-center gap-2",
+      "accent": "bg-[#D4A93A] text-[#0F2744] font-semibold hover:bg-[#c2982f] transition-colors rounded-sm px-8 py-4 flex items-center justify-center gap-2"
+    },
+    "hero": {
+      "treatment": "Premium 80vh layout. Left-aligned typography over a dark gradient overlay (bg-gradient-to-r from-[#0F2744]/95 via-[#0F2744]/70 to-transparent) on the background image. Large Serif heading, Gold accent badges."
+    },
+    "learning_methodology": {
+      "treatment": "Journey stepper layout. Use vertical line with Gold (#D4A93A) nodes. Active states pop, inactive states muted."
+    },
+    "trust_bar": {
+      "treatment": "Editorial Ribbon marquee using react-fast-marquee. Pale blue/grey background, Dark Navy text. Huge spacing (gap-32) between items (CBSE, ISC, CUET, 10+ Years Experience)."
+    },
+    "demo_form": {
+      "treatment": "Clean layout using Shadcn Form inside a Neumorphic card. Input fields should have subtle borders (border-[#0F2744]/20) and focus to Gold ring."
+    },
+    "floating_whatsapp": {
+      "treatment": "Fixed bottom-right circular button. Gold or WhatsApp Green, with strong drop-shadow and z-50."
+    }
+  },
+  "motion": {
+    "hover": "Subtle -translate-y-1 and shadow-lg for Subject and Why Choose Us cards.",
+    "page_load": "Framer Motion fade and slide-up (y: 20 -> 0) for text elements in Hero.",
+    "marquee": "Continuous slow scroll for Trust Bar, ensuring it feels like a gentle stream."
+  },
+  "images": [
+    {
+      "category": "hero_background",
+      "url": "https://images.pexels.com/photos/8197503/pexels-photo-8197503.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Students concentrating on laptops while taking notes in a university lecture hall."
+    },
+    {
+      "category": "mentor_portrait",
+      "url": "https://images.pexels.com/photos/37811218/pexels-photo-37811218.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Confident young teacher holding a book in a sunlit classroom."
+    },
+    {
+      "category": "abstract_texture_accent",
+      "url": "https://images.pexels.com/photos/5506217/pexels-photo-5506217.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Elegant abstract fluid ink art in dark blue with shimmering gold accents."
+    },
+    {
+      "category": "classroom_study",
+      "url": "https://images.pexels.com/photos/5940844/pexels-photo-5940844.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Group of diverse classmates sitting at table and sharing opinions during studies."
+    }
+  ],
+  "accessibility": {
+    "contrast": "Ensure white text on navy meets APCA/WCAG standards.",
+    "testing": "All interactive and key informational elements MUST include a data-testid attribute (e.g., data-testid='hero-book-demo-btn', data-testid='whatsapp-float-btn')."
+  },
+  "instructions_to_main_agent": [
+    "Install Google Fonts: 'Cormorant Garamond' (serif) and 'Poppins' (sans-serif). Configure Tailwind to use them as font-serif and font-sans.",
+    "Implement the 'Crystal Glass' header ensuring content isn't obscured.",
+    "Use Shadcn UI components for complex interactive pieces (Form, Accordion for FAQ) but customize them to match the premium 'Old Money Tech' aesthetic (remove heavy rounded corners, use rounded-sm).",
+    "Do NOT use 'Inter' font anywhere. Force 'Poppins' for body.",
+    "Install 'react-fast-marquee' for the Trust Bar.",
+    "Install 'lucide-react' for icons.",
+    "Integrate Framer Motion for scroll animations.",
+    "Ensure every CTA button and form input has a 'data-testid' attribute.",
+    "Use pure HTML/Tailwind for marketing layout structures to allow asymmetry, do not rely on rigid Shadcn Cards for the 'Why Choose Us' grid."
+  ]
+}
