@@ -1,0 +1,45 @@
+{
+  "summary": "First full backend + frontend test of Conceptual Studies. Backend: 13/15 pytest tests passing. Two SEO endpoints (/sitemap.xml, /robots.txt) implemented on backend but unreachable from public URL because the platform ingress only routes /api/* to backend (everything else goes to the React frontend). All other backend endpoints work: health, blog (8 seeded with all required slugs), reviews (3 seeded incl. Rohit/Gracy/Monika), public lead creation, admin auth (httpOnly cookies set), auth-protected admin endpoints, 401 without cookie, wrong-password 401, /api/auth/me. Frontend: Home page (tagline, CBSE/ISC/HBSE/CUET badges, marquee, WhatsApp float, FAQ, demo form, SEO schema #page-schema length=1863) loads correctly. Demo form end-to-end submit produces success message. All 9 nav pages (Home/About Mentor/Accountancy/Economics/Business Studies/Crash Courses/CUET/Blog/Contact/Reviews) load with correct titles, h1, WhatsApp float on every page, Reviews page schema injected. Blog list shows 8 posts; clicking a card opens full detail with h2 sections rendered. Admin flow end-to-end: /admin/login -> redirect to /admin, dashboard shows Leads=1 (our submitted lead), Blog Posts=8, Reviews=3; logout returns to /admin/login.",
+  "backend_issues": {
+    "critical": [
+      {"endpoint": "/sitemap.xml", "issue": "Returns frontend HTML instead of XML when accessed via public URL. Backend serves correct XML at localhost:8001/sitemap.xml, but K8s ingress only routes /api/* to backend; non-/api paths fall through to the React app. Mitigation: either (a) expose under /api/sitemap.xml + frontend rewrite, or (b) generate static sitemap.xml/robots.txt at build time and serve from frontend/public.", "priority": "HIGH"},
+      {"endpoint": "/robots.txt", "issue": "Same routing issue as /sitemap.xml — backend handler exists but the public URL returns the SPA HTML / a generic robots from frontend. Search engines won't find the Sitemap directive.", "priority": "HIGH"}
+    ],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [
+      {"flow": "Public pages auth bootstrap", "issue": "Every page emits two 401 console errors because AuthContext (or similar) calls /api/auth/me on mount for unauthenticated visitors. Functionally harmless but noisy and looks bad in DevTools. Recommend: silence 401 from /api/auth/me on public routes (treat as 'not logged in' without console.error), or skip the call when no cookie is present.", "affected_selectors": []}
+    ],
+    "design_issues": []
+  },
+  "test_report_links": [
+    "/app/backend/tests/backend_test.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [
+    "Make /sitemap.xml and /robots.txt accessible at public URL — recommended approach: write static robots.txt and a generated sitemap.xml into /app/frontend/public, OR add a build/runtime script that hits the backend on startup. The current FastAPI handlers are correct but unreachable externally because the ingress only forwards /api/* to backend.",
+    "(Optional) Silence /api/auth/me 401 console errors on public pages — wrap the call in try/catch and don't log.",
+    "(Code quality) FastAPI @app.on_event('startup'/'shutdown') is deprecated — migrate to a lifespan context manager.",
+    "(Code quality) CORS middleware sets allow_origins=[FRONTEND_URL, '*'] with allow_credentials=True. The wildcard '*' is invalid with credentials per the CORS spec; many browsers/servers ignore the wildcard in that case. Recommend removing '*' and listing explicit origins only.",
+    "(Code quality) seed_admin idempotency is good (updates password if changed). Verified working with ConceptAdmin@2025."
+  ],
+  "critical_code_review_comments": [
+    "Backend server.py is ~400 lines, still manageable but auth, blog, leads, reviews could be split into routers for maintainability.",
+    "Lead model rejects extra fields silently is fine; consider adding phone regex validation (currently any string accepted).",
+    "Blog content rendering on detail page only finds 3 H2 sections via Playwright — content actually uses markdown ## which depends on a markdown renderer in BlogPost.jsx. Render visually correct; verify markdown library is included.",
+    "Console errors from /api/auth/me 401 should be silenced as described.",
+    "sitemap/robots routing is the only blocker for the SEO acceptance criterion in the problem statement."
+  ],
+  "updated_files": [
+    "/app/backend/tests/backend_test.py"
+  ],
+  "success_rate": {"backend": "87% (13/15 — 2 SEO endpoints unreachable due to ingress, code itself is correct)", "frontend": "100% of tested flows"},
+  "test_credentials": "admin@conceptualstudies.in / ConceptAdmin@2025 — verified working",
+  "seed_data_creation": "Created one TEST_ lead via the public demo form during E2E; admin DELETE test removed the pytest-created lead. Seeded blog posts (8) and reviews (3) verified intact.",
+  "retest_needed": true,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Pytest file at /app/backend/tests/backend_test.py covers health/blog/reviews/leads/auth/SEO. The two SEO tests will continue to fail until /sitemap.xml and /robots.txt are reachable from the public URL — once main agent moves them to frontend/public (or adds an /api proxy + frontend rewrite), re-run pytest. Admin flow Playwright steps used: login at /admin/login with the credentials above; tabs admin-tab-leads / admin-tab-blog-posts / admin-tab-reviews; logout via admin-logout. AuthContext calls /api/auth/me on every page mount producing 401 console errors on public pages — expected for non-logged-in users but should be silenced.",
+  "rca of the issue": "Sitemap/robots: server.py registers @app.get('/sitemap.xml') and @app.get('/robots.txt') on the FastAPI app (outside /api router). Direct curl http://localhost:8001/sitemap.xml returns the correct XML. However the Kubernetes ingress rule for this preview environment forwards only paths beginning with /api to port 8001; all other paths go to the React dev server on port 3000, which serves the SPA index.html for /sitemap.xml (and a CDN/default robots for /robots.txt). Fix: place static robots.txt and a generated sitemap.xml in /app/frontend/public/, or expose backend endpoints under /api/seo/sitemap.xml + /api/seo/robots.txt and configure frontend rewrites."
+}
