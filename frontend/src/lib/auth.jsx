@@ -13,6 +13,7 @@ export function AuthProvider({ children }) {
                 const { data } = await api.get("/auth/me");
                 setUser(data);
             } catch {
+                // 401 expected for public pages — silently treat as not logged in
                 setUser(false);
             } finally {
                 setLoading(false);

@@ -305,8 +305,7 @@ ROUTES = [
 ]
 
 
-@app.get("/sitemap.xml")
-async def sitemap():
+async def _build_sitemap_xml() -> str:
     urls = [f"{SITE_URL}{r}" for r in ROUTES]
     posts = await db.blog_posts.find({"published": True}, {"slug": 1, "_id": 0}).to_list(200)
     urls += [f"{SITE_URL}/blog/{p['slug']}" for p in posts]
@@ -316,12 +315,27 @@ async def sitemap():
     for u in urls:
         body.append(f"<url><loc>{u}</loc><lastmod>{today}</lastmod><changefreq>weekly</changefreq></url>")
     body.append("</urlset>")
-    return FastResponse(content="\n".join(body), media_type="application/xml")
+    return "\n".join(body)
+
+
+@api_router.get("/sitemap.xml")
+async def api_sitemap():
+    return FastResponse(content=await _build_sitemap_xml(), media_type="application/xml")
+
+
+@api_router.get("/robots.txt", response_class=PlainTextResponse)
+async def api_robots():
+    return f"User-agent: *\nAllow: /\nDisallow: /admin\nSitemap: {SITE_URL}/api/sitemap.xml\n"
+
+
+@app.get("/sitemap.xml")
+async def sitemap():
+    return FastResponse(content=await _build_sitemap_xml(), media_type="application/xml")
 
 
 @app.get("/robots.txt", response_class=PlainTextResponse)
 async def robots():
-    return f"User-agent: *\nAllow: /\nDisallow: /admin\nSitemap: {SITE_URL}/sitemap.xml\n"
+    return f"User-agent: *\nAllow: /\nDisallow: /admin\nSitemap: {SITE_URL}/api/sitemap.xml\n"
 
 
 # Include router

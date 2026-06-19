@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin/login
+
+Sitemap: https://commerce-mastery-8.preview.emergentagent.com/api/sitemap.xml
