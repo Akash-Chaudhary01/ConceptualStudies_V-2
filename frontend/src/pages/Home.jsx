@@ -113,7 +113,22 @@ export default function Home() {
             </section>
 
             <TrustBar />
+{/* SEO Intro Section */}
+<section className="bg-white py-14 md:py-16">
+    <div className="max-w-5xl mx-auto px-5 md:px-8 text-center">
 
+        <h2 className="font-serif text-3xl md:text-4xl text-[#0F2744] leading-tight">
+            Online Commerce Coaching for Class 11 & Class 12 Students
+        </h2>
+
+        <p className="mt-6 text-[#4A5568] leading-8 max-w-4xl mx-auto">
+            Conceptual Studies offers live online Commerce coaching for <strong>Class 11, Class 12 and CUET</strong> students across India. Under the guidance of <strong>Komal Sejwal</strong>, students learn <strong>Accountancy, Economics and Business Studies</strong> through a concept-first approach that builds strong fundamentals instead of rote memorisation.
+            <br /><br />
+            Our structured classes are designed for <strong>CBSE, ISC, HBSE and State Boards</strong>, with regular assessments, personalised mentoring and continuous doubt support. Whether you're preparing for board exams or CUET, Conceptual Studies helps students strengthen concepts, improve academic performance and build strong concepts, improve board exam performance and prepare confidently for future academic success..
+        </p>
+
+    </div>
+</section>
             {/* Stats Band — credibility */}
             <section data-testid="stats-band" className="bg-white border-b border-[#0F2744]/10">
                 <div className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-10 md:py-14 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
