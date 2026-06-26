@@ -62,20 +62,39 @@ export default function SubjectPage({ subject }) {
 
     return (
         <>
-            <SEO
-                title={`${subject.title} Classes for Class 11 & 12 | Online ${subject.title} Coaching`}
-                description={`${subject.title} coaching by Komal Sejwal — ${subject.summary}`}
-                path={`/${subject.slug}`}
-                image={subject.image}
-                schema={schema}
-            />
-            <PageHero
+<SEO
+    title={`Online ${subject.title} Classes for Class 11 & 12 | CBSE, ISC & CUET Coaching`}
+    description={`Join Conceptual Studies for online ${subject.title} classes by Komal Sejwal. Live coaching for Class 11 & 12 students covering CBSE, ISC, HBSE, State Boards and CUET with concept-based learning, doubt support and personalised mentoring.`}
+    path={`/${subject.slug}`}
+    image={subject.image}
+    schema={schema}
+/>            <PageHero
                 kicker={subject.kicker}
                 title={subject.title}
                 subtitle={subject.summary}
                 image={subject.image}
             />
             <Breadcrumbs items={[{ to: "/", label: "Home" }, { label: subject.title }]} />
+            <section className="bg-white py-14 md:py-16">
+    <div className="max-w-5xl mx-auto px-5 md:px-8 text-center">
+
+        <h2 className="font-serif text-3xl md:text-4xl text-[#0F2744] leading-tight">
+            Online {subject.title} Classes for Class 11 & Class 12 Students
+        </h2>
+
+        <p className="mt-6 text-[#4A5568] leading-8 max-w-4xl mx-auto">
+            Conceptual Studies offers live online <strong>{subject.title}</strong> coaching for
+            <strong> Class 11</strong> and <strong>Class 12</strong> Commerce students across India.
+            Our concept-first teaching methodology helps students studying under
+            <strong> CBSE, ISC, HBSE and State Boards</strong> build strong fundamentals,
+            improve exam performance and prepare confidently for <strong>CUET</strong>.
+            Every class includes personalised mentoring, regular assessments,
+            doubt-solving sessions and structured revision to help students achieve
+            excellent academic results.
+        </p>
+
+    </div>
+</section>
 
             <section className="max-w-7xl mx-auto px-5 md:px-8 lg:px-12 py-16 md:py-24">
                 <div className="grid md:grid-cols-3 gap-12">
