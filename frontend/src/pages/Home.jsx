@@ -52,7 +52,7 @@ export default function Home() {
     return (
         <>
             <SEO
-                title="Online Commerce Coaching for Class 11, Class 12 & CUET"
+                title="Online Commerce Coaching for Class 11 & 12 | Conceptual Studies"
                 description="Conceptual Studies — Premium online Commerce coaching by Komal Sejwal across India. Accountancy, Economics, Business Studies, Crash Courses & CUET preparation with concept-based learning."
                 path="/"
                 schema={schema}
@@ -81,7 +81,7 @@ export default function Home() {
                             <span className="text-[#D4A93A]">Confident Results</span> Tomorrow.
                         </h1>
                         <p className="mt-5 md:mt-6 text-sm sm:text-base md:text-lg text-white/85 max-w-2xl leading-relaxed font-light">
-                            Master Accountancy, Economics and Business Studies through concept-based learning, personal attention and exam-focused preparation — designed for Class 11, Class 12 and CUET aspirants across India.
+                            Join Conceptual Studies for live online Commerce coaching in Accountancy, Economics and Business Studies. Our concept-first classes help Class 11, Class 12 and CUET students build strong fundamentals, score better in board exams and learn with confidence from anywhere in India.
                         </p>
 
                         <div className="mt-8 flex flex-wrap gap-2.5">
