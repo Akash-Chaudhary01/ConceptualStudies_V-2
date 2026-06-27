@@ -2,9 +2,16 @@
 <html>
 <head>
 <meta charset="utf-8">
+<title>Redirecting...</title>
 <script>
-window.location.replace("/");
+  sessionStorage.redirect =
+    location.pathname +
+    location.search +
+    location.hash;
+
+  window.location.replace("/");
 </script>
 </head>
-<body></body>
+<body>
+</body>
 </html>
