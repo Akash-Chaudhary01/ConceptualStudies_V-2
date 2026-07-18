@@ -7,7 +7,7 @@ import { Phone, Mail, MessageCircle, MapPin, Instagram } from "lucide-react";
 export default function Contact() {
     return (
         <>
-            <SEO title="Contact Us — Book a Free Demo" description="Contact Conceptual Studies for online Commerce coaching. Call +91 9910502275 or email info@conceptualstudies.in. Book a free demo class today." path="/contact" />
+            <SEO title="Contact Us — Book a Free Demo" description="Contact Conceptual Studies for online Commerce coaching. Call +91 9318369503 or email info@conceptualstudies.in. Book a free demo class today." path="/contact" />
             <PageHero kicker="Contact" title="Let's begin with a free demo class" subtitle="Pick the channel you're most comfortable with. We respond within a few hours." />
             <Breadcrumbs items={[{ to: "/", label: "Home" }, { label: "Contact" }]} />
 
